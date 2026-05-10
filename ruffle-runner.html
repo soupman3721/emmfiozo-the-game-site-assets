@@ -11,13 +11,13 @@
     <script>
         let params = new URLSearchParams(document.location.search);
         var gameFile = params.get("game");
-		    var embed;
-		    console.log(gameFile);
-		    if (gameFile) {
-			    embed = document.createElement("embed");
+		var embed;
+	    console.log(gameFile);
+	    if (gameFile) {
+			embed = document.createElement("embed");
         	embed.src = "games/" + gameFile;
         	document.body.appendChild(embed);
-		    }
+		}
     </script>
   </body>
 </html>
