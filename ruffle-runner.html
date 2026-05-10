@@ -1,23 +1,25 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>online ruffle runner</title>
-    <link href="/emmfiozo-the-game-site-assets/style.css" rel="stylesheet" type="text/css" media="all">
-    <script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>online ruffle runner</title>
+	<link href="/emmfiozo-the-game-site-assets/style.css" rel="stylesheet" type="text/css" media="all">
+	<script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
   </head>
   <body>
-    <script>
-        let params = new URLSearchParams(document.location.search);
-        var gameFile = params.get("game");
+	<script>
+		let params = new URLSearchParams(document.location.search);
+		var gameFile = params.get("game");
 		var embed;
-	    console.log(gameFile);
-	    if (gameFile) {
+		console.log(gameFile);
+		if (gameFile) {
 			embed = document.createElement("embed");
-        	embed.src = "games/" + gameFile;
-        	document.body.appendChild(embed);
+			embed.src = "games/" + gameFile;
+			embed.width = params.get("width");
+			embed.height = params.get("height");
+			document.body.appendChild(embed);
 		}
-    </script>
+	</script>
   </body>
 </html>
